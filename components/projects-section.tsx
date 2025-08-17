@@ -6,28 +6,31 @@ import { Github } from "lucide-react"
 export function ProjectsSection() {
   const projects = [
     {
-      name: "[Project Name 1]",
-      role: "ML Engineer",
+      name: "Interview360",
+      role: "ML/Backend Engineer",
       description:
-        "[Project description placeholder - Built an end-to-end machine learning pipeline for real-time recommendation system serving 1M+ users]",
-      techStack: ["Python", "TensorFlow", "FastAPI", "Redis", "AWS"],
+        "Application to help users prepare for technical interviews through automated interviews.",
+      techStack: ["Retrieval Augmented Generation", "OpenAI API", "ChromaDB", "Flask"],
       image: "/machine-learning-dashboard.png",
+      link: "https://github.com/PranavkrishnaVadhyar/Interview360_RAG",
     },
     {
-      name: "[Project Name 2]",
-      role: "Backend Engineer",
+      name: "FirstaidPro",
+      role: "ML/Backend Engineer",
       description:
-        "[Project description placeholder - Designed and implemented scalable microservices architecture handling 10K+ requests per second]",
-      techStack: ["Node.js", "PostgreSQL", "Docker", "Kubernetes", "GraphQL"],
+        "AI enabled first aid with automatic wound identification and real time treatment assistance.",
+      techStack: ["Python", "Tensorflow", "Flask", "MobileNet V3", "Flutter"],
       image: "/backend-architecture.png",
+      link:"https://github.com/PranavkrishnaVadhyar/FirstaidproV2",
     },
     {
-      name: "[Project Name 3]",
-      role: "Full-Stack ML Engineer",
+      name: "Gen-O-Sys",
+      role: "ML/Backend Engineer",
       description:
-        "[Project description placeholder - Developed computer vision application for automated quality control in manufacturing]",
-      techStack: ["PyTorch", "OpenCV", "Django", "PostgreSQL", "Docker"],
+        "Enterprise application that optimizes Hospital management systems (HMS) using Gen-AI.",
+      techStack: ["Python", "Langchain", "Flask", "MySQL", "HTML/CSS"],
       image: "/computer-vision-interface.png",
+      link:'https://github.com/PranavkrishnaVadhyar/Gen-o-Sys-SlashKey3.0',
     },
   ]
 
@@ -43,11 +46,13 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card key={index} className="bg-card border-border hover:shadow-xl transition-all duration-300 group">
               <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.name}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <Link href={project.link || "#"}>
+                  <img
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.name}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                </Link>
                 <div className="absolute top-4 right-4">
                   <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
                     {project.role}

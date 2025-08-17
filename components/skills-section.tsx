@@ -7,25 +7,25 @@ export function SkillsSection() {
     {
       title: "ML/DL Frameworks",
       icon: Brain,
-      skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "Hugging Face", "MLflow"],
+      skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Hugging Face", "Langchain", "CrewAI"],
       color: "bg-chart-2",
     },
     {
-      title: "Backend Tools",
+      title: "Languages & Backend Tools",
       icon: Server,
-      skills: ["Python", "Node.js", "FastAPI", "Django", "Express.js", "GraphQL"],
+      skills: ["Python", "Java", "C", "Flask", "FastAPI"],
       color: "bg-chart-1",
     },
     {
       title: "Databases",
       icon: Database,
-      skills: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "Vector DBs", "ClickHouse"],
+      skills: ["PostgreSQL", "Redis", "MySQL", "Chroma DB", "Qdrant DB"],
       color: "bg-chart-3",
     },
     {
       title: "Cloud & DevOps",
       icon: Cloud,
-      skills: ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD", "Monitoring"],
+      skills: ["AWS", "Docker", "Git"],
       color: "bg-chart-4",
     },
   ]

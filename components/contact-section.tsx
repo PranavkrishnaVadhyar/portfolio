@@ -7,8 +7,8 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "[your.email@example.com]",
-      href: "mailto:[your.email@example.com]",
+      value: "[bpranavkrishnaofficial@gmail.com]",
+      href: "mailto:bpranavkrishnaofficial@gmail.com",
       color: "bg-chart-2",
       description: "Drop me a line anytime",
     },
@@ -16,7 +16,7 @@ export function ContactSection() {
       icon: Github,
       label: "GitHub",
       value: "[github.com/yourusername]",
-      href: "https://github.com/[yourusername]",
+      href: "https://github.com/PranavkrishnaVadhyar",
       color: "bg-chart-1",
       description: "Check out my latest projects",
     },
@@ -24,14 +24,14 @@ export function ContactSection() {
       icon: Linkedin,
       label: "LinkedIn",
       value: "[linkedin.com/in/yourprofile]",
-      href: "https://linkedin.com/in/[yourprofile]",
+      href: "https://www.linkedin.com/in/pranavkrishnavadhyar/",
       color: "bg-chart-4",
       description: "Let's connect professionally",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "[Your City, Country]",
+      value: "[Ernakulam, Kerala, India]",
       href: "#",
       color: "bg-chart-3",
       description: "Available for remote work",
@@ -43,14 +43,14 @@ export function ContactSection() {
       icon: Coffee,
       label: "My Linktree",
       description: "All my links in one place",
-      href: "https://linktr.ee/[yourusername]",
+      href: "https://linktr.ee/pranavkrishna.ai",
       variant: "default" as const,
     },
     {
       icon: Download,
       label: "Download Resume",
       description: "Get my latest CV",
-      href: "#",
+      href: "https://drive.google.com/file/d/1ZSX9j3Xq2i6xIVN2zMSj1VoHDk_ZDKIM/view?usp=sharing",
       variant: "outline" as const,
     },
   ]
@@ -149,7 +149,7 @@ export function ContactSection() {
         <div className="text-center">
           <div className="bg-card rounded-lg p-6 border border-border/50 inline-block">
             <p className="text-muted-foreground font-serif mb-2">
-              © 2024 [Your Name]. Built with Next.js and Tailwind CSS.
+              © 2024 [B Pranavkrishna Vadhyar]. Built with Love.
             </p>
             <p className="text-xs text-muted-foreground">
               Open to remote work • Available for freelance projects • Based in [Your City]

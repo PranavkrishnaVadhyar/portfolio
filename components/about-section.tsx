@@ -14,13 +14,10 @@ export function AboutSection() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                  [Short bio placeholder - Passionate ML and Backend Engineer with X years of experience building
-                  scalable systems and intelligent solutions. Specialized in developing high-performance APIs, machine
-                  learning pipelines, and distributed systems.]
+                  Pranavkrishna is a Generative AI and Backend Engineer passionate about building intelligent systems that blend large language models, NLP, and scalable architectures. His experience includes designing and developing agents, RAG pipelines, fine-tuning models, and developing inference systems for real-world applications. Skilled in TensorFlow, FastAPI, PostgreSQL, LangChain, and CrewAI, he bridges AI research with deployment.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                  [Additional bio content - Currently focused on advancing AI/ML applications in production environments
-                  while maintaining robust backend infrastructure that serves millions of users.]
+                  He is also active in research and community initiatives, mentoring and driving AI-focused workshops and collaborations, while exploring innovative solutions at the intersection of AI and backend engineering.
                 </p>
               </div>
               <div className="flex justify-center">

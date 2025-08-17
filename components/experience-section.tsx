@@ -5,31 +5,22 @@ import { Building, Calendar } from "lucide-react"
 export function ExperienceSection() {
   const experiences = [
     {
-      company: "[Company/Organization 1]",
-      role: "Senior ML Engineer",
-      period: "2022 - Present",
-      location: "Remote",
+      company: "DifferentByte",
+      role: "AI Engineer",
+      period: "Sept 2024 - Dec 2024",
+      location: "Kochi, Kerala",
       impact:
-        "[Impact placeholder - Led development of ML infrastructure serving 5M+ users, implemented automated model deployment pipeline, mentored junior engineers]",
-      technologies: ["Python", "TensorFlow", "Kubernetes", "AWS", "MLOps"],
+      "[Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.]",
+      technologies: ["Python", "Langchain", "FastAPI", "AWS", "CrewAI"],
     },
     {
       company: "[Company/Organization 2]",
-      role: "Backend Engineer",
-      period: "2020 - 2022",
-      location: "San Francisco, CA",
+      role: "AI/ML Engineer",
+      period: "May 2023 - Jan 2024",
+      location: "Remote",
       impact:
-        "[Impact placeholder - Built scalable API architecture handling 100K+ daily requests, optimized database queries reducing response time by 50%, collaborated with cross-functional teams]",
-      technologies: ["Node.js", "PostgreSQL", "Redis", "Docker", "GraphQL"],
-    },
-    {
-      company: "[Company/Organization 3]",
-      role: "Software Engineer",
-      period: "2018 - 2020",
-      location: "New York, NY",
-      impact:
-        "[Impact placeholder - Developed data processing pipelines, implemented RESTful APIs, contributed to open-source projects, participated in code reviews and technical discussions]",
-      technologies: ["Python", "Django", "PostgreSQL", "AWS", "Git"],
+        "[Led 4-member AI team to develop and deploy client- focused tech solutions. Executed strategies and optimized NLP/image workflows, increasing revenue by Rs.5 lakhs.]",
+      technologies: ["Python", "Scikit Learn", "Flask", "Tensorflow", "Pandas"],
     },
   ]
 
