@@ -149,10 +149,10 @@ export function ContactSection() {
         <div className="text-center">
           <div className="bg-card rounded-lg p-6 border border-border/50 inline-block">
             <p className="text-muted-foreground font-serif mb-2">
-              © 2024 [B Pranavkrishna Vadhyar]. Built with Love.
+              © 2025 B Pranavkrishna Vadhyar. Built with Love ❤️.
             </p>
             <p className="text-xs text-muted-foreground">
-              Open to remote work • Available for freelance projects • Based in [Your City]
+              Open to remote work • Available for freelance projects • Based in Kochi, Kerala
             </p>
           </div>
         </div>
