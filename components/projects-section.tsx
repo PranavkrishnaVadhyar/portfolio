@@ -82,7 +82,7 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="flex gap-2 pt-4">
-                  <a href="https://github.com/PranavkrishnaVadhyar" target="_blank" rel="noopener noreferrer">
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <Button size="sm" variant="outline" className="flex-1 bg-transparent">
                       <Github className="h-4 w-4 mr-2" />
                       Code
