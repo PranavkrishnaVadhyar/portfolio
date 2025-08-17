@@ -7,7 +7,7 @@ export function HeroSection() {
       <div className="max-w-4xl mx-auto text-center">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground font-sans">[B Pranavkrishna Vadhyar]</h1>
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-foreground font-sans">B Pranavkrishna Vadhyar</h1>
             <p className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground font-serif">ML + Backend Engineer</p>
             <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Building intelligent systems and scalable backend solutions that power the future of technology

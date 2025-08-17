@@ -10,16 +10,16 @@ export function ExperienceSection() {
       period: "Sept 2024 - Dec 2024",
       location: "Kochi, Kerala",
       impact:
-      "[Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.]",
+      "Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.",
       technologies: ["Python", "Langchain", "FastAPI", "AWS", "CrewAI"],
     },
     {
-      company: "[Company/Organization 2]",
+      company: "Neuflo Solutions",
       role: "AI/ML Engineer",
       period: "May 2023 - Jan 2024",
       location: "Remote",
       impact:
-        "[Led 4-member AI team to develop and deploy client- focused tech solutions. Executed strategies and optimized NLP/image workflows, increasing revenue by Rs.5 lakhs.]",
+        "Led 4-member AI team to develop and deploy client- focused tech solutions. Executed strategies and optimized NLP/image workflows, increasing revenue by Rs.5 lakhs.",
       technologies: ["Python", "Scikit Learn", "Flask", "Tensorflow", "Pandas"],
     },
   ]

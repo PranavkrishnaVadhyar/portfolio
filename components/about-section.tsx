@@ -21,8 +21,12 @@ export function AboutSection() {
                 </p>
               </div>
               <div className="flex justify-center">
-                <div className="w-64 h-64 bg-muted rounded-lg flex items-center justify-center">
-                  <span className="text-muted-foreground text-sm">[Profile Photo]</span>
+                <div className="w-64 h-64 rounded-lg overflow-hidden">
+                  <img
+                    src="/profile.jpg"
+                    alt="Pranavkrishna"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  />
                 </div>
               </div>
             </div>

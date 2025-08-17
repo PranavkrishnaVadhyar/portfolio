@@ -7,7 +7,7 @@ export function ContactSection() {
     {
       icon: Mail,
       label: "Email",
-      value: "[bpranavkrishnaofficial@gmail.com]",
+      value: "bpranavkrishnaofficial@gmail.com",
       href: "mailto:bpranavkrishnaofficial@gmail.com",
       color: "bg-chart-2",
       description: "Drop me a line anytime",
@@ -15,7 +15,7 @@ export function ContactSection() {
     {
       icon: Github,
       label: "GitHub",
-      value: "[github.com/yourusername]",
+      value: "github.com/PranavkrishnaVadhyar",
       href: "https://github.com/PranavkrishnaVadhyar",
       color: "bg-chart-1",
       description: "Check out my latest projects",
@@ -23,7 +23,7 @@ export function ContactSection() {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "[linkedin.com/in/yourprofile]",
+      value: "linkedin.com/in/pranavkrishnavadhyar",
       href: "https://www.linkedin.com/in/pranavkrishnavadhyar/",
       color: "bg-chart-4",
       description: "Let's connect professionally",
@@ -31,7 +31,7 @@ export function ContactSection() {
     {
       icon: MapPin,
       label: "Location",
-      value: "[Ernakulam, Kerala, India]",
+      value: "Ernakulam, Kerala, India",
       href: "#",
       color: "bg-chart-3",
       description: "Available for remote work",
