@@ -43,33 +43,28 @@ export function ExperienceSection() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block animate-pulse-slow"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"></div>
 
           <div className="space-y-8">
             {experiences.map((exp, index) => (
               <div key={index} className="relative">
                 {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block hover:scale-125 transition-transform duration-300 animate-pulse"></div>
+                <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block"></div>
 
-                <Card
-                  className="bg-card border-border md:ml-16 hover:shadow-xl hover:scale-[1.02] transition-all duration-500 group animate-fade-in-right opacity-0 [animation-fill-mode:forwards]"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
+                <Card className="bg-card border-border md:ml-16 hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-6">
                     <div className="space-y-4">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                         <div>
-                          <h3 className="text-xl font-bold text-foreground font-sans group-hover:text-primary transition-colors duration-300">
-                            {exp.role}
-                          </h3>
+                          <h3 className="text-xl font-bold text-foreground font-sans">{exp.role}</h3>
                           <div className="flex items-center gap-2 text-muted-foreground">
-                            <Building className="h-4 w-4 group-hover:rotate-12 transition-transform duration-300" />
+                            <Building className="h-4 w-4" />
                             <span className="font-serif">{exp.company}</span>
                           </div>
                         </div>
                         <div className="flex flex-col sm:items-end gap-1">
                           <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Calendar className="h-4 w-4 group-hover:animate-bounce" />
+                            <Calendar className="h-4 w-4" />
                             <span>{exp.period}</span>
                           </div>
                           <span className="text-sm text-muted-foreground">{exp.location}</span>
@@ -82,12 +77,7 @@ export function ExperienceSection() {
                         <h4 className="font-semibold text-sm mb-2 font-sans">Key Technologies:</h4>
                         <div className="flex flex-wrap gap-2">
                           {exp.technologies.map((tech, techIndex) => (
-                            <Badge
-                              key={techIndex}
-                              variant="secondary"
-                              className="text-xs hover:bg-primary hover:text-primary-foreground hover:scale-110 transition-all duration-300 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]"
-                              style={{ animationDelay: `${index * 0.2 + techIndex * 0.1}s` }}
-                            >
+                            <Badge key={techIndex} variant="secondary" className="text-xs">
                               {tech}
                             </Badge>
                           ))}

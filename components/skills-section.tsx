@@ -42,30 +42,19 @@ export function SkillsSection() {
           {skillCategories.map((category, index) => {
             const IconComponent = category.icon
             return (
-              <Card
-                key={index}
-                className="bg-card border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-500 group animate-fade-in-up opacity-0 [animation-fill-mode:forwards]"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
+              <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
                 <CardHeader className="text-center pb-4">
                   <div
-                    className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 animate-pulse-slow`}
+                    className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4`}
                   >
-                    <IconComponent className="h-6 w-6 text-white group-hover:scale-110 transition-transform duration-300" />
+                    <IconComponent className="h-6 w-6 text-white" />
                   </div>
-                  <CardTitle className="text-lg font-sans group-hover:text-primary transition-colors duration-300">
-                    {category.title}
-                  </CardTitle>
+                  <CardTitle className="text-lg font-sans">{category.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {category.skills.map((skill, skillIndex) => (
-                      <Badge
-                        key={skillIndex}
-                        variant="secondary"
-                        className="text-xs hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 animate-slide-in-left opacity-0 [animation-fill-mode:forwards]"
-                        style={{ animationDelay: `${index * 0.15 + skillIndex * 0.05}s` }}
-                      >
+                      <Badge key={skillIndex} variant="secondary" className="text-xs">
                         {skill}
                       </Badge>
                     ))}

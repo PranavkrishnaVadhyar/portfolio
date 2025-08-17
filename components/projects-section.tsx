@@ -41,31 +41,22 @@ export function ProjectsSection() {
 
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-card border-border hover:shadow-xl transition-all duration-500 group hover:-translate-y-2 hover:rotate-1 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
+            <Card key={index} className="bg-card border-border hover:shadow-xl transition-all duration-300 group">
               <div className="relative overflow-hidden rounded-t-lg">
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.name}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <div className="absolute top-4 right-4 animate-float">
-                  <Badge
-                    variant="secondary"
-                    className="bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  >
+                <div className="absolute top-4 right-4">
+                  <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
                     {project.role}
                   </Badge>
                 </div>
               </div>
 
               <CardHeader>
-                <CardTitle className="text-xl font-sans group-hover:text-primary transition-colors duration-300">
-                  {project.name}
-                </CardTitle>
+                <CardTitle className="text-xl font-sans">{project.name}</CardTitle>
               </CardHeader>
 
               <CardContent className="space-y-4">
@@ -76,12 +67,7 @@ export function ProjectsSection() {
                     <h4 className="font-semibold text-sm mb-2 font-sans">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-1">
                       {project.techStack.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="outline"
-                          className="text-xs hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300"
-                          style={{ transitionDelay: `${techIndex * 0.05}s` }}
-                        >
+                        <Badge key={techIndex} variant="outline" className="text-xs">
                           {tech}
                         </Badge>
                       ))}
@@ -90,12 +76,8 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="flex gap-2 pt-4">
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="flex-1 bg-transparent hover:bg-primary hover:text-primary-foreground hover:scale-105 hover:shadow-lg transition-all duration-300"
-                  >
-                    <Github className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                  <Button size="sm" variant="outline" className="flex-1 bg-transparent">
+                    <Github className="h-4 w-4 mr-2" />
                     Code
                   </Button>
                 </div>
