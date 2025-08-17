@@ -12,7 +12,7 @@ export function ProjectsSection() {
       description:
         "Application to help users prepare for technical interviews through automated interviews.",
       techStack: ["Retrieval Augmented Generation", "OpenAI API", "ChromaDB", "Flask"],
-      image: "/machine-learning-dashboard.png",
+      image: "/interview360.jpg",
       link: "https://github.com/PranavkrishnaVadhyar/Interview360_RAG",
     },
     {
@@ -21,7 +21,7 @@ export function ProjectsSection() {
       description:
         "AI enabled first aid with automatic wound identification and real time treatment assistance.",
       techStack: ["Python", "Tensorflow", "Flask", "MobileNet V3", "Flutter"],
-      image: "/backend-architecture.png",
+      image: "/firstaidpro.jpg",
       link:"https://github.com/PranavkrishnaVadhyar/FirstaidproV2",
     },
     {
@@ -82,10 +82,12 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="flex gap-2 pt-4">
-                  <Button size="sm" variant="outline" className="flex-1 bg-transparent">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
+                  <a href="https://github.com/PranavkrishnaVadhyar" target="_blank" rel="noopener noreferrer">
+                    <Button size="sm" variant="outline" className="flex-1 bg-transparent">
+                      <Github className="h-4 w-4 mr-2" />
+                      Code
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>
