@@ -7,6 +7,15 @@ import Link from "next/link"
 export function ProjectsSection() {
   const projects = [
     {
+      name: "Applyr",
+      role: "Founder/Full Stack Developer",
+      description:
+        "Applyr is an AI-powered Chrome extension that automates job applications by auto-filling forms, generating intelligent responses, and tracking applications.",
+      techStack: ["React", "Fast API", "Langchain", "Groq", "PostgreSQL", "Vercel", "Supabase", "Chrome Extensions"],
+      image: "/applyr.png",
+      link: "https://github.com/PranavkrishnaVadhyar/Applyr",
+    },
+    {
       name: "Interview360",
       role: "ML/Backend Engineer",
       description:

@@ -5,12 +5,29 @@ import { Building, Calendar } from "lucide-react"
 export function ExperienceSection() {
   const experiences = [
     {
+      company: "Hashroot",
+      role: "AI Consultant",
+      period: "Nov 2025 - Present",
+      location: "Kochi, Kerala",
+      impact: "Working on implementing AI features into Hashroot's inhouse applications",
+      technologies: ["Python", "FastAPI", "PostgreSQL", "Langchain", "OpenAI"],
+    },
+    {
+      company: "Feathersoft",
+      role: "AI/ML Engineer",
+      period: "May 2025 - Oct 2025",
+      location: "Kochi, Kerala",
+      impact:
+        "Led end-to-end development and optimization of production-grade RAG systems by integrating Neo4j graph databases, hybrid vector retrievers (Chroma/Weaviate), prompt-engineered SQL generation, and scalable medical chatbot architectures across research and deployment environments.",
+      technologies: ["Python", "Langchain", "Langgraph", "ChromaDB", "Neo4j", "OpenAI", "Flask"],
+    },
+    {
       company: "DifferentByte",
       role: "AI Engineer",
       period: "Sept 2024 - Dec 2024",
       location: "Kochi, Kerala",
       impact:
-      "Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.",
+        "Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.",
       technologies: ["Python", "Langchain", "FastAPI", "AWS", "CrewAI"],
     },
     {

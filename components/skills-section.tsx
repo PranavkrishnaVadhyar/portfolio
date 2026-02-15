@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Brain, Server, Database, Cloud } from "lucide-react"
+import { Brain, Server, Database, Cloud, Sparkle } from "lucide-react"
 
 export function SkillsSection() {
   const skillCategories = [
@@ -19,15 +19,21 @@ export function SkillsSection() {
     {
       title: "Databases",
       icon: Database,
-      skills: ["PostgreSQL", "Redis", "MySQL", "Chroma DB", "Qdrant DB"],
+      skills: ["PostgreSQL", "Redis", "MySQL", "Chroma DB", "Qdrant DB", "Supabase"],
       color: "bg-chart-3",
     },
     {
       title: "Cloud & DevOps",
       icon: Cloud,
-      skills: ["AWS", "Docker", "Git"],
+      skills: ["AWS", "Docker", "Git", "Linux"],
       color: "bg-chart-4",
     },
+    {
+      title: "Vibe Coding",
+      icon: Sparkle,
+      skills: ["Cursor", "Antigravity", "V0", "Claude", "Gemini", "ChatGPT"],
+      color: "bg-chart-5",
+    }
   ]
 
   return (
