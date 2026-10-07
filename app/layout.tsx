@@ -1,35 +1,11 @@
+import { GeistSans } from "geist/font/sans"
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist } from "next/font/google"
-import { Manrope } from "next/font/google"
 import "./globals.css"
-
-const geist = Geist({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-geist-sans",
-})
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-manrope",
-})
-
 export const metadata: Metadata = {
-  title: "ML + Backend Engineer Portfolio",
-  description: "Portfolio of a Machine Learning and Backend Engineer showcasing projects, skills, and experience",
-  generator: "v0.app",
+  title: "B Pranavkrishna Vadhyar | ML + Backend Engineer",
+  description: "Generative AI, intelligent systems, and scalable backends. Explore the projects and experience of B Pranavkrishna Vadhyar.",
 }
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased`}>
-      <body>{children}</body>
-    </html>
-  )
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en" className={`${GeistSans.variable} antialiased`}><body>{children}</body></html>
 }

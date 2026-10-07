@@ -1,76 +1,22 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Brain, Server, Database, Cloud, Sparkle } from "lucide-react"
-
-export function SkillsSection() {
-  const skillCategories = [
-    {
-      title: "ML/DL Frameworks",
-      icon: Brain,
-      skills: ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "Numpy", "Matplotlib", "Hugging Face", "Langchain", "CrewAI"],
-      color: "bg-chart-2",
-    },
-    {
-      title: "Languages & Backend Tools",
-      icon: Server,
-      skills: ["Python", "Java", "C", "Flask", "FastAPI"],
-      color: "bg-chart-1",
-    },
-    {
-      title: "Databases",
-      icon: Database,
-      skills: ["PostgreSQL", "Redis", "MySQL", "Chroma DB", "Qdrant DB", "Supabase"],
-      color: "bg-chart-3",
-    },
-    {
-      title: "Cloud & DevOps",
-      icon: Cloud,
-      skills: ["AWS", "Docker", "Git", "Linux"],
-      color: "bg-chart-4",
-    },
-    {
-      title: "Vibe Coding",
-      icon: Sparkle,
-      skills: ["Cursor", "Antigravity", "V0", "Claude", "Gemini", "ChatGPT"],
-      color: "bg-chart-5",
-    }
-  ]
-
-  return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-sans">Skills & Technologies</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skillCategories.map((category, index) => {
-            const IconComponent = category.icon
-            return (
-              <Card key={index} className="bg-card border-border hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="text-center pb-4">
-                  <div
-                    className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center mx-auto mb-4`}
-                  >
-                    <IconComponent className="h-6 w-6 text-white" />
-                  </div>
-                  <CardTitle className="text-lg font-sans">{category.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            )
-          })}
-        </div>
-      </div>
-    </section>
-  )
+"use client"
+import { useEffect, useRef, useState, type CSSProperties } from "react"
+import { BrainCircuit, Code2, Database, Cloud, Sparkles, RotateCcw, MoveUpRight } from "lucide-react"
+import { usePortfolioMotion } from "@/components/motion-system"
+import { SectionHeading } from "@/components/section-heading"
+const categories=[
+ {name:'ML & AI',icon:BrainCircuit,description:'From models to intelligent applications.',skills:['TensorFlow','PyTorch','Scikit-learn','Pandas','NumPy','Matplotlib','Hugging Face','LangChain','CrewAI']},
+ {name:'Backend',icon:Code2,description:'APIs and architectures built to scale.',skills:['Python','Java','C','Flask','FastAPI']},
+ {name:'Databases',icon:Database,description:'Connecting structured and unstructured knowledge.',skills:['PostgreSQL','Redis','MySQL','ChromaDB','Qdrant','Supabase']},
+ {name:'Cloud & DevOps',icon:Cloud,description:'The infrastructure behind the intelligence.',skills:['AWS','Docker','Git','Linux']},
+ {name:'AI tooling',icon:Sparkles,description:'A practical toolkit for faster iteration.',skills:['Cursor','Antigravity','V0','Claude','Gemini','ChatGPT']},
+]
+const skills=categories.flatMap((c,category)=>c.skills.map(name=>({name,category})))
+const points=skills.map((_,i)=>{const y=1-2*(i+.5)/skills.length,a=i*2.399963,r=Math.sqrt(1-y*y);return{x:Math.cos(a)*r,y,z:Math.sin(a)*r}})
+export function SkillsSection(){
+ const [category,setCategory]=useState(0),[selected,setSelected]=useState('TensorFlow')
+ const host=useRef<HTMLDivElement>(null), angle=useRef({yaw:0,pitch:0}),target=useRef<{yaw:number;pitch:number}|null>(null),drag=useRef({down:false,x:0,y:0,moved:0}),hover=useRef(false),seen=useRef(false)
+ const {enabled}=usePortfolioMotion()
+ useEffect(()=>{const el=host.current;if(!el)return;let frame=0,last=0;const buttons=el.querySelectorAll<HTMLElement>('.sphere-tag');const paint=(time:number)=>{const delta=last?Math.min(time-last,40):16;last=time;if(seen.current&&!document.hidden&&enabled){if(target.current){angle.current.yaw+=(target.current.yaw-angle.current.yaw)*.08;angle.current.pitch+=(target.current.pitch-angle.current.pitch)*.08;if(Math.abs(target.current.yaw-angle.current.yaw)<.005&&Math.abs(target.current.pitch-angle.current.pitch)<.005)target.current=null}else if(!drag.current.down){angle.current.yaw+=delta*.00012*(hover.current ? 0.15 : 1)}const {yaw,pitch}=angle.current;const radius=el.clientWidth*.35;points.forEach((p,i)=>{const x=p.x*Math.cos(yaw)+p.z*Math.sin(yaw),z=-p.x*Math.sin(yaw)+p.z*Math.cos(yaw),y=p.y*Math.cos(pitch)-z*Math.sin(pitch),depth=p.y*Math.sin(pitch)+z*Math.cos(pitch);buttons[i].style.transform=`translate(-50%,-50%) translate3d(${x*radius}px,${-y*radius}px,${depth*80}px) scale(${.8+(depth+1)*.13})`;buttons[i].style.opacity=String(.28+(depth+1)*.36);buttons[i].style.zIndex=String(Math.round((depth+1)*50))})}if(enabled)frame=requestAnimationFrame(paint)};const obs=new IntersectionObserver(([e])=>{seen.current=e.isIntersecting});obs.observe(el);if(enabled)frame=requestAnimationFrame(paint);return()=>{cancelAnimationFrame(frame);obs.disconnect()}},[enabled])
+ const select=(i:number)=>{setCategory(skills[i].category);setSelected(skills[i].name);if(enabled){const p=points[i];target.current={yaw:Math.atan2(-p.x,p.z),pitch:Math.atan2(p.y,Math.sqrt(p.x*p.x+p.z*p.z))}}}
+ return <section id="skills" className="section-shell skills-section"><SectionHeading index="02" label="CONNECTED CAPABILITIES" title={<>A stack built<br/>for <span className="text-gradient">what’s next.</span></>}>Every tool is a node. The value is in how they connect.</SectionHeading><div className="skills-layout"><div className="skill-universe"><div className="sphere-orbit orbit-one"/><div className="sphere-orbit orbit-two"/><div ref={host} className="tech-sphere" data-lenis-prevent onPointerEnter={()=>{hover.current=true}} onPointerLeave={()=>{hover.current=false;drag.current.down=false}} onPointerDown={e=>{if(!enabled)return;drag.current={down:true,x:e.clientX,y:e.clientY,moved:0};target.current=null}} onPointerMove={e=>{if(!drag.current.down)return;const dx=e.clientX-drag.current.x,dy=e.clientY-drag.current.y;angle.current.yaw+=dx*.008;angle.current.pitch-=dy*.008;drag.current={down:true,x:e.clientX,y:e.clientY,moved:drag.current.moved+Math.abs(dx)+Math.abs(dy)}}} onPointerUp={()=>{drag.current.down=false}} onPointerCancel={()=>{drag.current.down=false}}>{skills.map((skill,i)=>{const Icon=categories[skill.category].icon;return <button key={skill.name} className={`sphere-tag ${selected===skill.name?'selected':''}`} style={{'--x':`${(points[i].x*145).toFixed(3)}px`,'--y':`${(-points[i].y*145).toFixed(3)}px`,'--z':`${(points[i].z*70).toFixed(3)}px`} as CSSProperties} onClick={()=>{if(drag.current.moved<6)select(i);drag.current.moved=0}} onFocus={()=>select(i)} aria-pressed={selected===skill.name}><Icon size={13}/>{skill.name}</button>})}</div><div className="sphere-instruction"><RotateCcw size={13}/>{enabled?'DRAG TO EXPLORE · SELECT A SKILL':'SELECT A SKILL TO EXPLORE'}</div></div><div className="skill-details"><div className="skill-tabs" aria-label="Skill categories">{categories.map((c,i)=>{const Icon=c.icon;return <button key={c.name} aria-pressed={category===i} onClick={()=>select(skills.findIndex(s=>s.category===i))}><Icon size={17}/>{c.name}<MoveUpRight size={14}/></button>})}</div><div className="skill-detail-panel"><p className="mono-label">{categories[category].name.toUpperCase()} / {selected}</p><h3>{categories[category].description}</h3><div className="skill-pills">{categories[category].skills.map(name=><button key={name} className={name===selected?'selected':''} onClick={()=>select(skills.findIndex(s=>s.name===name))}>{name}</button>)}</div></div></div></div></section>
 }

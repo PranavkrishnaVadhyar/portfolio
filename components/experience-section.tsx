@@ -1,7 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Building, Calendar } from "lucide-react"
-
+import { ArrowUpRight } from "lucide-react"
+import { Reveal } from "@/components/motion-system"
+import { SectionHeading } from "@/components/section-heading"
 export function ExperienceSection() {
   const experiences = [
     {
@@ -41,64 +40,5 @@ export function ExperienceSection() {
     },
   ]
 
-  return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-sans">Professional Experience</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border hidden md:block"></div>
-
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative">
-                {/* Timeline dot */}
-                <div className="absolute left-6 w-4 h-4 bg-primary rounded-full border-4 border-background hidden md:block"></div>
-
-                <Card className="bg-card border-border md:ml-16 hover:shadow-lg transition-shadow duration-300">
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                        <div>
-                          <h3 className="text-xl font-bold text-foreground font-sans">{exp.role}</h3>
-                          <div className="flex items-center gap-2 text-muted-foreground">
-                            <Building className="h-4 w-4" />
-                            <span className="font-serif">{exp.company}</span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col sm:items-end gap-1">
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <Calendar className="h-4 w-4" />
-                            <span>{exp.period}</span>
-                          </div>
-                          <span className="text-sm text-muted-foreground">{exp.location}</span>
-                        </div>
-                      </div>
-
-                      <p className="text-muted-foreground leading-relaxed font-serif">{exp.impact}</p>
-
-                      <div>
-                        <h4 className="font-semibold text-sm mb-2 font-sans">Key Technologies:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {exp.technologies.map((tech, techIndex) => (
-                            <Badge key={techIndex} variant="secondary" className="text-xs">
-                              {tech}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+ return <section id="experience" className="section-shell experience-section"><SectionHeading index="04" label="THE EXPERIENCE GRAPH" title={<>Every role.<br/><span className="text-gradient">Another connection.</span></>}>From early experiments to production AI. A continuous learning pipeline.</SectionHeading><div className="experience-track"><div className="pipeline-line" aria-hidden="true"><i/></div>{experiences.map((exp,index)=><div className="experience-row" key={exp.company}><div className="experience-node" aria-hidden="true"><span>{String(index+1).padStart(2,'0')}</span></div><div className="experience-date"><span>{exp.period}</span><small>{exp.location}</small></div><Reveal className="experience-card" delay={index*.06}><div className="experience-card-top"><span className="mono-label">{exp.company}</span><ArrowUpRight size={17}/></div><h3>{exp.role}</h3><p>{exp.impact}</p><div className="tech-tags">{exp.technologies.map(tech=><span key={tech}>{tech}</span>)}</div></Reveal></div>)}</div></section>
 }

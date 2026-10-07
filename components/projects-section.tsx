@@ -1,108 +1,29 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
-import Link from "next/link"
-
+"use client"
+import { useEffect, useRef, useState } from "react"
+import { ArrowUpRight, ArrowLeft, ArrowRight, Pause, Play, Github } from "lucide-react"
+import { ProjectGraphic, type ProjectKind } from "@/components/project-graphic"
+import { DepthCard, usePortfolioMotion } from "@/components/motion-system"
+import { SectionHeading } from "@/components/section-heading"
+const projects: {name:string;category:string;description:string;techStack:string[];scene:ProjectKind;link:string;stages:string[];note?:string}[] = [
+ {name:"Applyr",category:"Founder / Full Stack Developer",description:"An AI-powered Chrome extension that automates job applications by auto-filling forms, generating intelligent responses, and tracking applications.",techStack:["React","FastAPI","LangChain","Groq","PostgreSQL","Vercel","Supabase","Chrome Extensions"],scene:"applyr",link:"https://github.com/PranavkrishnaVadhyar/Applyr",stages:["Fill","Generate","Track"]},
+ {name:"Interview360",category:"ML / Backend Engineer",description:"An application for technical interview preparation through automated interviews, powered by retrieval-augmented generation.",techStack:["Retrieval Augmented Generation","OpenAI API","ChromaDB","Flask"],scene:"interview",link:"https://github.com/PranavkrishnaVadhyar/Interview360_RAG",stages:["Question","Retrieve","Respond"]},
+ {name:"FirstaidPro",category:"ML / Backend Engineer",description:"AI-enabled first aid with automatic wound identification and real-time treatment assistance.",techStack:["Python","TensorFlow","Flask","MobileNet V3","Flutter"],scene:"firstaid",link:"https://github.com/PranavkrishnaVadhyar/FirstaidproV2",stages:["Scan","Identify","Assist"]},
+ {name:"PramaanSetu",category:"AI-assisted Document Screening",description:"A bridge to verification: screens synthetic identity documents with local OCR, field validation, image forensics, optional face comparison, and ML risk scoring. Includes cross-document consistency checks and English/Hindi reports.",techStack:["React","FastAPI","PostgreSQL","PaddleOCR","OpenCV","DeepFace","scikit-learn"],scene:"pramaan",link:"https://github.com/PranavkrishnaVadhyar/PramaanSetu",stages:["Extract","Compare","Report"],note:"Educational demo using synthetic documents. No UIDAI connection or real Aadhaar e-KYC."},
+]
 export function ProjectsSection() {
-  const projects = [
-    {
-      name: "Applyr",
-      role: "Founder/Full Stack Developer",
-      description:
-        "Applyr is an AI-powered Chrome extension that automates job applications by auto-filling forms, generating intelligent responses, and tracking applications.",
-      techStack: ["React", "Fast API", "Langchain", "Groq", "PostgreSQL", "Vercel", "Supabase", "Chrome Extensions"],
-      image: "/applyr.png",
-      link: "https://github.com/PranavkrishnaVadhyar/Applyr",
-    },
-    {
-      name: "Interview360",
-      role: "ML/Backend Engineer",
-      description:
-        "Application to help users prepare for technical interviews through automated interviews.",
-      techStack: ["Retrieval Augmented Generation", "OpenAI API", "ChromaDB", "Flask"],
-      image: "/interview360.jpg",
-      link: "https://github.com/PranavkrishnaVadhyar/Interview360_RAG",
-    },
-    {
-      name: "FirstaidPro",
-      role: "ML/Backend Engineer",
-      description:
-        "AI enabled first aid with automatic wound identification and real time treatment assistance.",
-      techStack: ["Python", "Tensorflow", "Flask", "MobileNet V3", "Flutter"],
-      image: "/firstaidpro.jpg",
-      link:"https://github.com/PranavkrishnaVadhyar/FirstaidproV2",
-    },
-    {
-      name: "Gen-O-Sys",
-      role: "ML/Backend Engineer",
-      description:
-        "Enterprise application that optimizes Hospital management systems (HMS) using Gen-AI.",
-      techStack: ["Python", "Langchain", "Flask", "MySQL", "HTML/CSS"],
-      image: "/computer-vision-interface.png",
-      link:'https://github.com/PranavkrishnaVadhyar/Gen-o-Sys-SlashKey3.0',
-    },
-  ]
-
-  return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-sans">Featured Projects</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-xl transition-all duration-300 group">
-              <div className="relative overflow-hidden rounded-t-lg">
-                <Link href={project.link || "#"}>
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </Link>
-                <div className="absolute top-4 right-4">
-                  <Badge variant="secondary" className="bg-background/80 backdrop-blur-sm">
-                    {project.role}
-                  </Badge>
-                </div>
-              </div>
-
-              <CardHeader>
-                <CardTitle className="text-xl font-sans">{project.name}</CardTitle>
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed font-serif">{project.description}</p>
-
-                <div className="space-y-3">
-                  <div>
-                    <h4 className="font-semibold text-sm mb-2 font-sans">Tech Stack:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.techStack.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex gap-2 pt-4">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <Button size="sm" variant="outline" className="flex-1 bg-transparent">
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+ const [current,setCurrent]=useState(0),[paused,setPaused]=useState(false),[focused,setFocused]=useState(false),[visible,setVisible]=useState(false),[touching,setTouching]=useState(false)
+ const host=useRef<HTMLDivElement>(null),viewport=useRef<HTMLDivElement>(null),manualUntil=useRef(0)
+ const {enabled}=usePortfolioMotion()
+ const playing=enabled&&!paused&&!focused&&!touching&&visible
+ const go=(index:number)=>{const next=(index+projects.length)%projects.length;const el=viewport.current;if(el){manualUntil.current=performance.now()+1100;el.scrollTo({left:next*el.scrollWidth/8,behavior:enabled?'smooth':'instant'})}setCurrent(next)}
+ useEffect(()=>{const el=host.current;if(!el)return;const observer=new IntersectionObserver(([entry])=>setVisible(entry.isIntersecting),{threshold:.25});observer.observe(el);return()=>observer.disconnect()},[])
+ useEffect(()=>{if(!playing)return;let frame=0,last=0,position=viewport.current?.scrollLeft??0;const tick=(time:number)=>{const el=viewport.current;if(el&&last&&!document.hidden&&time>manualUntil.current){const half=el.scrollWidth/2;if(Math.abs(el.scrollLeft-position)>2)position=el.scrollLeft;position+=Math.min(time-last,40)*.032;if(position>=half)position-=half;el.scrollLeft=position}else if(el){position=el.scrollLeft}last=time;frame=requestAnimationFrame(tick)};frame=requestAnimationFrame(tick);return()=>cancelAnimationFrame(frame)},[playing])
+ return <section id="projects" className="section-shell projects-section"><SectionHeading index="03" label="SELECTED SYSTEMS" title={<>Less theory.<br/><span className="text-gradient">More things that work.</span></>}>Real problems, connected ideas, and the systems I built to bring them together.</SectionHeading>
+ <div ref={host} className="project-slideshow" role="region" aria-roledescription="carousel" aria-label="Continuously scrolling projects" onFocusCapture={()=>setFocused(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setFocused(false)}} onKeyDown={e=>{if(e.key==='ArrowRight'){e.preventDefault();go(current+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(current-1)}}}>
+ <div className="slideshow-toolbar"><span className="slide-count">0{current+1} <span>/ 0{projects.length}</span></span><div className="slideshow-controls"><button onClick={()=>setPaused(v=>!v)} aria-label={paused?'Play slideshow':'Pause slideshow'} aria-pressed={paused}>{paused?<Play size={16}/>:<Pause size={16}/>}</button><button onClick={()=>go(current-1)} aria-label="Previous project"><ArrowLeft size={19}/></button><button onClick={()=>go(current+1)} aria-label="Next project"><ArrowRight size={19}/></button></div></div>
+ <div ref={viewport} className="slideshow-viewport continuous-viewport" tabIndex={0} aria-label="Project filmstrip. Swipe horizontally or use the project controls." onTouchStart={()=>setTouching(true)} onTouchEnd={()=>setTouching(false)} onTouchCancel={()=>setTouching(false)} onScroll={e=>{const el=e.currentTarget;const step=el.scrollWidth/8;setCurrent(Math.floor((el.scrollLeft+step*.35)/step)%projects.length)}}>
+ <div className="slideshow-track continuous-track">{[...projects,...projects].map((project,index)=><div key={project.name+index} className="project-slide featured-project" role="group" aria-roledescription="slide" aria-label={index<4?`${index+1} of 4: ${project.name}`:undefined} aria-hidden={index>=4}>
+ <DepthCard className={`project-card project-${project.scene}`}><div className="project-visual"><div className="project-topline"><span>{index%4===0?'FEATURED PROJECT':`PROJECT / 0${index%4+1}`}</span><span className="project-dot"/></div><ProjectGraphic kind={project.scene}/><div className="project-flow">{project.stages.map((stage,i)=><span key={stage}>{stage}{i<2&&<i/>}</span>)}</div></div><div className="project-content"><p className="project-category">{project.category}</p><h3>{project.name}<ArrowUpRight size={22}/></h3><p>{project.description}</p>{project.note&&<p className="project-note">{project.note}</p>}<div className="tech-tags">{project.techStack.map(tech=><span key={tech}>{tech}</span>)}</div><a className="project-link" tabIndex={index>=4?-1:0} href={project.link} target="_blank" rel="noopener noreferrer"><Github size={15}/> Explore repository <ArrowUpRight size={16}/></a></div></DepthCard></div>)}</div></div>
+ <div className="slide-indicators" aria-label="Choose a project">{projects.map((project,index)=><button key={project.name} aria-label={`Show ${project.name}`} aria-current={current===index?'true':undefined} onClick={()=>go(index)}><span className="indicator-line"/><span>{project.name}</span></button>)}</div><p className="sr-only" aria-live="off">{projects[current].name}, project {current+1} of {projects.length}</p>
+ </div></section>
 }

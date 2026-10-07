@@ -1,3 +1,5 @@
+import { MotionSystem } from "@/components/motion-system"
+
 import { HeroSection } from "@/components/hero-section"
 import { AboutSection } from "@/components/about-section"
 import { SkillsSection } from "@/components/skills-section"
@@ -9,9 +11,9 @@ import { Navigation } from "@/components/navigation"
 
 export default function Portfolio() {
   return (
-    <div className="min-h-screen bg-background">
+    <MotionSystem><div className="portfolio-shell"><a className="skip-link" href="#main-content">Skip to content</a>
       <Navigation />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <AboutSection />
         <SkillsSection />
@@ -20,6 +22,6 @@ export default function Portfolio() {
         <AchievementsSection />
         <ContactSection />
       </main>
-    </div>
+    </div></MotionSystem>
   )
 }

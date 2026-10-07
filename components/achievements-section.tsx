@@ -1,92 +1,12 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Award, Trophy, Star, Users } from "lucide-react"
-
-export function AchievementsSection() {
-  const achievements = [
-    {
-      type: "Award",
-      icon: Award,
-      title: "Best Outgoing Student Award",
-      description: "Received the award of Best outgoing Student of Department of Computer Science for the year 2021-25.",
-      year: "2025",
-      organization: "Toc H institute of science and technology",
-      color: "bg-chart-2",
-    },
-    {
-      type: "Leadership",
-      icon: Users,
-      title: "Founder of Core.ai",
-      description: "Launched and Lead Core.ai – The official AI Club of Toc H",
-      year: "2024",
-      organization: "Core.ai",
-      color: "bg-chart-3",
-    },
-    {
-      type: "Achievement",
-      icon: Star,
-      title: "Training and Mentoring",
-      description: "Trained 500+ students across Kerala colleges in technical topics.",
-      year: "2023 - Present",
-      organization: "Various colleges across Kerala",
-      color: "bg-chart-4",
-    },
-    {
-      type: "Award",
-      icon: Award,
-      title: "Spark Venture 2024",
-      description: "Acquired funding of Rs 75,000 for project First-aid pro and secured 2nd place in for Spark venture 2024.",
-      year: "2024",
-      organization: "Freston Analytics",
-      color: "bg-chart-5",
-    },
-  ]
-
-  return (
-    <section id="achievements" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-sans">Achievements & Recognition</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          {achievements.map((achievement, index) => {
-            const IconComponent = achievement.icon
-            return (
-              <Card key={index} className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div
-                      className={`w-12 h-12 ${achievement.color} rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}
-                    >
-                      <IconComponent className="h-6 w-6 text-white" />
-                    </div>
-
-                    <div className="flex-1 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <Badge variant="outline" className="text-xs">
-                          {achievement.type}
-                        </Badge>
-                        <span className="text-sm text-muted-foreground font-mono">{achievement.year}</span>
-                      </div>
-
-                      <div>
-                        <h3 className="text-lg font-bold text-foreground mb-2 font-sans">{achievement.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed font-serif">{achievement.description}</p>
-                      </div>
-
-                      <div className="pt-2">
-                        <span className="text-sm font-medium text-primary">{achievement.organization}</span>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            )
-          })}
-        </div>
-      </div>
-    </section>
-  )
-}
+"use client"
+import { useState } from "react"
+import { Award, Users, Star, Trophy, ArrowUpRight, RotateCcw } from "lucide-react"
+import { Counter, Reveal } from "@/components/motion-system"
+import { SectionHeading } from "@/components/section-heading"
+const awards=[
+ {title:'Best Outgoing Student',icon:Award,year:'2025',type:'Recognition',description:'Best outgoing student of the Department of Computer Science for 2021–25.',organization:'Toc H Institute of Science and Technology'},
+ {title:'Founder of Core.ai',icon:Users,year:'2024',type:'Community',description:'Launched and led Core.ai, the official AI club of Toc H.',organization:'Core.ai'},
+ {title:'Training & Mentoring',icon:Star,year:'2023 – Present',type:'Impact',description:'Trained 500+ students across Kerala colleges in technical topics.',organization:'Colleges across Kerala'},
+ {title:'Spark Venture 2024',icon:Trophy,year:'2024',type:'Innovation',description:'Secured second place and Rs 75,000 funding for FirstaidPro.',organization:'Freston Analytics'},
+]
+export function AchievementsSection(){const [flipped,setFlipped]=useState<number|null>(null);return <section id="achievements" className="section-shell achievements-section"><div className="achievements-intro"><SectionHeading index="05" label="IMPACT BEYOND THE CODE" title={<>Build. Share.<br/><span className="text-gradient">Move people forward.</span></>}/><div className="medal-scene" aria-hidden="true"><div className="medal-orbit"/><div className="medal-object"><div className="medal-face"><Trophy size={55} strokeWidth={1}/></div><div className="medal-edge"/><div className="medal-ribbon ribbon-a"/><div className="medal-ribbon ribbon-b"/></div></div></div><div className="impact-metrics"><div><strong><Counter value={500} suffix="+"/></strong><span>STUDENTS MENTORED</span></div><div><strong><Counter value={75000} prefix="₹"/></strong><span>PROJECT FUNDING</span></div><div><strong>01</strong><span>AI COMMUNITY FOUNDED</span></div></div><div className="award-grid">{awards.map((award,i)=>{const Icon=award.icon;return <Reveal key={award.title} delay={i*.06}><article onPointerEnter={e=>{if(e.pointerType==="mouse")setFlipped(i)}} onPointerLeave={e=>{if(e.pointerType==="mouse"&&!e.currentTarget.contains(document.activeElement))setFlipped(null)}} className={`award-card ${flipped===i?'is-flipped':''}`}><div className="award-flipper"><div className="award-front" aria-hidden={flipped===i}><div className="award-meta"><Icon size={23}/><span>{award.year}</span></div><span className="mono-label">{award.type}</span><h3>{award.title}</h3><p>{award.organization}</p></div><div className="award-back" aria-hidden={flipped!==i}><span className="mono-label">{award.year} / {award.type}</span><h3>{award.title}</h3><p>{award.description}</p></div></div><button className="award-toggle" onClick={()=>setFlipped(flipped===i?null:i)} aria-expanded={flipped===i} aria-label={`${flipped===i?"Back from":"Details about"} ${award.title}`}>{flipped===i?<><RotateCcw size={14}/> Back</>:<>View impact <ArrowUpRight size={15}/></>}</button></article></Reveal>})}</div></section>}

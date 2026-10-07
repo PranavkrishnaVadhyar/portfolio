@@ -1,38 +1,13 @@
-import { Card, CardContent } from "@/components/ui/card"
-
-export function AboutSection() {
-  return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 font-sans">About Me</h2>
-          <div className="w-20 h-1 bg-primary mx-auto"></div>
-        </div>
-
-        <Card className="bg-card border-border">
-          <CardContent className="p-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-6">
-                <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                  Pranavkrishna is a Generative AI and Backend Engineer passionate about building intelligent systems that blend large language models, NLP, and scalable architectures. His experience includes designing and developing agents, RAG pipelines, fine-tuning models, and developing inference systems for real-world applications. Skilled in TensorFlow, FastAPI, PostgreSQL, LangChain, and CrewAI, he bridges AI research with deployment.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed font-serif">
-                  He is also active in research and community initiatives, mentoring and driving AI-focused workshops and collaborations, while exploring innovative solutions at the intersection of AI and backend engineering.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-64 h-64 rounded-lg overflow-hidden">
-                  <img
-                    src="/profile.jpg"
-                    alt="Pranavkrishna"
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                  />
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-    </section>
-  )
+"use client"
+import { useRef } from "react"
+import { motion, useInView, useScroll, useTransform, type MotionValue } from "framer-motion"
+import { DepthCard, Reveal, usePortfolioMotion } from "@/components/motion-system"
+import { SectionHeading } from "@/components/section-heading"
+function Word({ word, progress, start, end }: {word:string;progress:MotionValue<number>;start:number;end:number}) { const opacity=useTransform(progress,[start,end],[.36,1]);const {enabled}=usePortfolioMotion();return <motion.span style={{opacity:enabled?opacity:1}}>{word} </motion.span> }
+function ScrollWords({text}:{text:string}) { const ref=useRef<HTMLParagraphElement>(null);const {scrollYProgress}=useScroll({target:ref,offset:['start .9','end .5']});const words=text.split(' ');return <p ref={ref} className="scroll-words">{words.map((word,i)=><Word key={i} word={word} progress={scrollYProgress} start={i/words.length} end={(i+1)/words.length}/>)}</p> }
+function PortraitPhoto() {
+ const ref=useRef<HTMLDivElement>(null), visible=useInView(ref,{once:true,amount:.25})
+ const {enabled}=usePortfolioMotion()
+ return <motion.div ref={ref} className="portrait-image" initial={false} animate={{clipPath:!enabled||visible?'inset(0% 0% 0% 0% round 9px)':'inset(8% 0% 8% 0% round 9px)'}} transition={{duration:enabled?.9:0,ease:[.22,1,.36,1]}}><img src="/profile.jpg" width={619} height={791} alt="B Pranavkrishna Vadhyar speaking at an event" loading="lazy"/></motion.div>
 }
+export function AboutSection(){return <section id="about" className="section-shell about-section"><SectionHeading index="01" label="THE PERSON BEHIND THE PIPELINE" title={<>Curiosity in.<br/><span className="text-gradient">Real-world impact out.</span></>}/><div className="about-layout"><Reveal className="about-portrait"><DepthCard className="portrait-card"><div className="portrait-orbit" aria-hidden="true"/><PortraitPhoto/><div className="portrait-caption"><span className="status-light"/><span>ENGINEER. RESEARCHER. EDUCATOR. BUILDER.</span></div><span className="portrait-corner" aria-hidden="true">PV / 01</span></DepthCard></Reveal><Reveal className="about-copy"><ScrollWords text="I build intelligent systems at the intersection of generative AI and backend engineering. From language models and RAG pipelines to agents and inference systems, I turn research into applications that work in the real world."/><p>Experienced with TensorFlow, FastAPI, PostgreSQL, LangChain, and CrewAI, I connect AI research with deployment. Beyond the code, I mentor, lead workshops, and build communities around practical AI.</p><div className="about-flow" aria-label="Research to architecture to deployment"><span>Research</span><i/><span>Architecture</span><i/><span>Deployment</span></div><div className="about-note"><span>BASED IN</span><strong>Kochi, Kerala</strong><span>THINKING IN</span><strong>Systems &amp; possibilities</strong></div></Reveal></div><div className="section-dust" aria-hidden="true"/></section>}
