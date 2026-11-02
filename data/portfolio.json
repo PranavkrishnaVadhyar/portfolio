@@ -1,0 +1,586 @@
+{
+  "personal": {
+    "name": "B Pranavkrishna Vadhyar",
+    "nameLine1": "B Pranavkrishna",
+    "nameLine2": "Vadhyar",
+    "role": "ML & Backend Engineer",
+    "brand": "pranavkrishna",
+    "brandSuffix": ".ai",
+    "location": "Kochi, Kerala",
+    "heroLocation": "KOCHI, INDIA · 09.93° N",
+    "coordinates": "09.93° N / 76.27° E",
+    "photo": {
+      "src": "/profile.jpg",
+      "width": 619,
+      "height": 791,
+      "alt": "B Pranavkrishna Vadhyar speaking at an event",
+      "caption": "ENGINEER. RESEARCHER. EDUCATOR. BUILDER.",
+      "badge": "PV / 01"
+    }
+  },
+  "metadata": {
+    "title": "B Pranavkrishna Vadhyar | AI & Backend Engineer",
+    "description": "Portfolio of B Pranavkrishna Vadhyar, AI and backend engineer in Kochi. Explore RAG systems, generative AI projects, experience, and technical writing.",
+    "language": "en",
+    "siteUrl": "https://pranavkrishnavadhyar.vercel.app",
+    "siteName": "B Pranavkrishna Vadhyar",
+    "socialTagline": "AI engineering. Connected systems. Practical knowledge."
+  },
+  "navigation": {
+    "items": [
+      {
+        "href": "#about",
+        "label": "About"
+      },
+      {
+        "href": "#skills",
+        "label": "Expertise"
+      },
+      {
+        "href": "#projects",
+        "label": "Work"
+      },
+      {
+        "href": "#experience",
+        "label": "Journey"
+      },
+      {
+        "href": "#achievements",
+        "label": "Impact"
+      },
+      {
+        "href": "/blogs",
+        "label": "Blogs"
+      }
+    ],
+    "contact": "Contact",
+    "cta": "Let’s connect",
+    "label": "Main navigation",
+    "homeLabel": "Pranavkrishna home",
+    "open": "Open navigation",
+    "close": "Close navigation",
+    "skip": "Skip to content"
+  },
+  "hero": {
+    "availability": "OPEN TO OPPORTUNITIES",
+    "greeting": "HELLO WORLD. I’M",
+    "description": {
+      "before": "I connect ",
+      "emphasis": "intelligence",
+      "after": " with infrastructure.",
+      "lines": [
+        "Building AI systems that think deeper,",
+        "and backends that take them further."
+      ]
+    },
+    "cta": "Explore my work",
+    "scroll": "SCROLL TO DISCOVER",
+    "specialties": [
+      "GENERATIVE AI",
+      "RAG SYSTEMS",
+      "BACKEND ENGINEERING"
+    ],
+    "index": "01 — 08",
+    "neural": {
+      "input": "INPUT / IDEAS",
+      "output": "OUTPUT / IMPACT",
+      "caption": "NEURAL FIELD",
+      "hint": "MOVE TO INTERACT"
+    }
+  },
+  "about": {
+    "heading": {
+      "index": "01",
+      "label": "THE PERSON BEHIND THE PIPELINE",
+      "title": "Curiosity in.",
+      "accent": "Real-world impact out.",
+      "prefix": "",
+      "description": ""
+    },
+    "intro": "I build intelligent systems at the intersection of generative AI and backend engineering. From language models and RAG pipelines to agents and inference systems, I turn research into applications that work in the real world.",
+    "description": "Experienced with TensorFlow, FastAPI, PostgreSQL, LangChain, and CrewAI, I connect AI research with deployment. Beyond the code, I mentor, lead workshops, and build communities around practical AI.",
+    "flow": [
+      "Research",
+      "Architecture",
+      "Deployment"
+    ],
+    "flowLabel": "Research to architecture to deployment",
+    "basedLabel": "BASED IN",
+    "thinkingLabel": "THINKING IN",
+    "thinking": "Systems & possibilities"
+  },
+  "skills": {
+    "heading": {
+      "index": "02",
+      "label": "CONNECTED CAPABILITIES",
+      "title": "A stack built",
+      "accent": "what’s next.",
+      "prefix": "for ",
+      "description": "Every tool is a node. The value is in how they connect."
+    },
+    "categories": [
+      {
+        "name": "ML & AI",
+        "icon": "BrainCircuit",
+        "description": "From models to intelligent applications.",
+        "skills": [
+          "TensorFlow",
+          "PyTorch",
+          "Scikit-learn",
+          "Pandas",
+          "NumPy",
+          "Matplotlib",
+          "Hugging Face",
+          "LangChain",
+          "CrewAI"
+        ]
+      },
+      {
+        "name": "Backend",
+        "icon": "Code2",
+        "description": "APIs and architectures built to scale.",
+        "skills": [
+          "Python",
+          "Java",
+          "C",
+          "Flask",
+          "FastAPI"
+        ]
+      },
+      {
+        "name": "Databases",
+        "icon": "Database",
+        "description": "Connecting structured and unstructured knowledge.",
+        "skills": [
+          "PostgreSQL",
+          "Redis",
+          "MySQL",
+          "ChromaDB",
+          "Qdrant",
+          "Supabase"
+        ]
+      },
+      {
+        "name": "Cloud & DevOps",
+        "icon": "Cloud",
+        "description": "The infrastructure behind the intelligence.",
+        "skills": [
+          "AWS",
+          "Docker",
+          "Git",
+          "Linux"
+        ]
+      },
+      {
+        "name": "AI tooling",
+        "icon": "Sparkles",
+        "description": "A practical toolkit for faster iteration.",
+        "skills": [
+          "Cursor",
+          "Antigravity",
+          "V0",
+          "Claude",
+          "Gemini",
+          "ChatGPT"
+        ]
+      }
+    ],
+    "dragHint": "DRAG TO EXPLORE · SELECT A SKILL",
+    "staticHint": "SELECT A SKILL TO EXPLORE",
+    "categoryLabel": "Skill categories"
+  },
+  "projects": {
+    "heading": {
+      "index": "03",
+      "label": "SELECTED SYSTEMS",
+      "title": "Less theory.",
+      "accent": "More things that work.",
+      "prefix": "",
+      "description": "Real problems, connected ideas, and the systems I built to bring them together."
+    },
+    "items": [
+      {
+        "name": "Applyr",
+        "category": "Founder / Full Stack Developer",
+        "description": "An AI-powered Chrome extension that automates job applications by auto-filling forms, generating intelligent responses, and tracking applications.",
+        "techStack": [
+          "React",
+          "FastAPI",
+          "LangChain",
+          "Groq",
+          "PostgreSQL",
+          "Vercel",
+          "Supabase",
+          "Chrome Extensions"
+        ],
+        "scene": "applyr",
+        "link": "https://github.com/PranavkrishnaVadhyar/Applyr",
+        "stages": [
+          "Fill",
+          "Generate",
+          "Track"
+        ],
+        "graphic": {
+          "input": "INPUT / CONTEXT",
+          "title": "APPLICATION ENGINE",
+          "output": "OUTPUT / ACTION"
+        }
+      },
+      {
+        "name": "Interview360",
+        "category": "ML / Backend Engineer",
+        "description": "An application for technical interview preparation through automated interviews, powered by retrieval-augmented generation.",
+        "techStack": [
+          "Retrieval Augmented Generation",
+          "OpenAI API",
+          "ChromaDB",
+          "Flask"
+        ],
+        "scene": "interview",
+        "link": "https://github.com/PranavkrishnaVadhyar/Interview360_RAG",
+        "stages": [
+          "Question",
+          "Retrieve",
+          "Respond"
+        ],
+        "graphic": {
+          "input": "INPUT / CONTEXT",
+          "title": "CONVERSATION ENGINE",
+          "output": "OUTPUT / ACTION"
+        }
+      },
+      {
+        "name": "FirstaidPro",
+        "category": "ML / Backend Engineer",
+        "description": "AI-enabled first aid with automatic wound identification and real-time treatment assistance.",
+        "techStack": [
+          "Python",
+          "TensorFlow",
+          "Flask",
+          "MobileNet V3",
+          "Flutter"
+        ],
+        "scene": "firstaid",
+        "link": "https://github.com/PranavkrishnaVadhyar/FirstaidproV2",
+        "stages": [
+          "Scan",
+          "Identify",
+          "Assist"
+        ],
+        "graphic": {
+          "input": "INPUT / CONTEXT",
+          "title": "VISION / ASSISTANCE",
+          "output": "OUTPUT / ACTION"
+        }
+      },
+      {
+        "name": "PramaanSetu",
+        "category": "AI-assisted Document Screening",
+        "description": "A bridge to verification: screens synthetic identity documents with local OCR, field validation, image forensics, optional face comparison, and ML risk scoring. Includes cross-document consistency checks and English/Hindi reports.",
+        "techStack": [
+          "React",
+          "FastAPI",
+          "PostgreSQL",
+          "PaddleOCR",
+          "OpenCV",
+          "DeepFace",
+          "scikit-learn"
+        ],
+        "scene": "pramaan",
+        "link": "https://github.com/PranavkrishnaVadhyar/PramaanSetu",
+        "stages": [
+          "Extract",
+          "Compare",
+          "Report"
+        ],
+        "note": "Educational demo using synthetic documents. No UIDAI connection or real Aadhaar e-KYC.",
+        "graphic": {
+          "input": "OCR / EVIDENCE",
+          "title": "DOCUMENT INTELLIGENCE",
+          "output": "RISK / REPORT"
+        }
+      }
+    ],
+    "labels": {
+      "region": "Continuously scrolling projects",
+      "play": "Play slideshow",
+      "pause": "Pause slideshow",
+      "previous": "Previous project",
+      "next": "Next project",
+      "viewport": "Project filmstrip. Swipe horizontally or use the project controls.",
+      "featured": "FEATURED PROJECT",
+      "project": "PROJECT",
+      "repository": "Explore repository",
+      "choose": "Choose a project",
+      "show": "Show",
+      "of": "of",
+      "filmstrip": "CONTINUOUS EXPLORATION / SWIPE TO DISCOVER"
+    }
+  },
+  "experience": {
+    "heading": {
+      "index": "04",
+      "label": "THE EXPERIENCE GRAPH",
+      "title": "Every role.",
+      "accent": "Another connection.",
+      "prefix": "",
+      "description": "From early experiments to production AI. A continuous learning pipeline."
+    },
+    "items": [
+      {
+        "company": "Hashroot",
+        "role": "AI Consultant",
+        "period": "Nov 2025 - Present",
+        "location": "Kochi, Kerala",
+        "impact": "Working on implementing AI features into Hashroot's inhouse applications",
+        "technologies": [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "Langchain",
+          "OpenAI"
+        ]
+      },
+      {
+        "company": "Feathersoft",
+        "role": "AI/ML Engineer",
+        "period": "May 2025 - Oct 2025",
+        "location": "Kochi, Kerala",
+        "impact": "Led end-to-end development and optimization of production-grade RAG systems by integrating Neo4j graph databases, hybrid vector retrievers (Chroma/Weaviate), prompt-engineered SQL generation, and scalable medical chatbot architectures across research and deployment environments.",
+        "technologies": [
+          "Python",
+          "Langchain",
+          "Langgraph",
+          "ChromaDB",
+          "Neo4j",
+          "OpenAI",
+          "Flask"
+        ]
+      },
+      {
+        "company": "DifferentByte",
+        "role": "AI Engineer",
+        "period": "Sept 2024 - Dec 2024",
+        "location": "Kochi, Kerala",
+        "impact": "Developed scalable FastAPI backend ensuring high performance and reliability. Implemented CRUD operations in QdrantDB, developed and deployed LangChain and CrewAI agents.",
+        "technologies": [
+          "Python",
+          "Langchain",
+          "FastAPI",
+          "AWS",
+          "CrewAI"
+        ]
+      },
+      {
+        "company": "Neuflo Solutions",
+        "role": "AI/ML Engineer",
+        "period": "May 2023 - Jan 2024",
+        "location": "Remote",
+        "impact": "Led 4-member AI team to develop and deploy client- focused tech solutions. Executed strategies and optimized NLP/image workflows, increasing revenue by Rs.5 lakhs.",
+        "technologies": [
+          "Python",
+          "Scikit Learn",
+          "Flask",
+          "Tensorflow",
+          "Pandas"
+        ]
+      }
+    ]
+  },
+  "achievements": {
+    "heading": {
+      "index": "05",
+      "label": "IMPACT BEYOND THE CODE",
+      "title": "Build. Share.",
+      "accent": "Move people forward.",
+      "prefix": "",
+      "description": ""
+    },
+    "metrics": [
+      {
+        "value": 500,
+        "prefix": "",
+        "suffix": "+",
+        "label": "STUDENTS MENTORED",
+        "display": ""
+      },
+      {
+        "value": 75000,
+        "prefix": "₹",
+        "suffix": "",
+        "label": "PROJECT FUNDING",
+        "display": ""
+      },
+      {
+        "value": 1,
+        "prefix": "",
+        "suffix": "",
+        "label": "AI COMMUNITY FOUNDED",
+        "display": "01"
+      }
+    ],
+    "items": [
+      {
+        "title": "Best Outgoing Student",
+        "icon": "Award",
+        "year": "2025",
+        "type": "Recognition",
+        "description": "Best outgoing student of the Department of Computer Science for 2021–25.",
+        "organization": "Toc H Institute of Science and Technology"
+      },
+      {
+        "title": "Founder of Core.ai",
+        "icon": "Users",
+        "year": "2024",
+        "type": "Community",
+        "description": "Launched and led Core.ai, the official AI club of Toc H.",
+        "organization": "Core.ai"
+      },
+      {
+        "title": "Training & Mentoring",
+        "icon": "Star",
+        "year": "2023 – Present",
+        "type": "Impact",
+        "description": "Trained 500+ students across Kerala colleges in technical topics.",
+        "organization": "Colleges across Kerala"
+      },
+      {
+        "title": "Spark Venture 2024",
+        "icon": "Trophy",
+        "year": "2024",
+        "type": "Innovation",
+        "description": "Secured second place and Rs 75,000 funding for FirstaidPro.",
+        "organization": "Freston Analytics"
+      }
+    ],
+    "back": "Back",
+    "view": "View impact",
+    "backLabel": "Back from",
+    "detailLabel": "Details about"
+  },
+  "contact": {
+    "heading": {
+      "index": "07",
+      "label": "LET’S MAKE A CONNECTION",
+      "title": "Your next idea.",
+      "accent": "Our next build.",
+      "prefix": "",
+      "description": ""
+    },
+    "description": "Have an interesting problem, a bold idea, or an opportunity? Let’s turn it into something that works.",
+    "cta": "Start a conversation",
+    "email": "bpranavkrishnaofficial@gmail.com",
+    "availability": "Available for new opportunities",
+    "availabilityNote": "REMOTE · FREELANCE · COLLABORATIONS",
+    "links": [
+      {
+        "id": "github",
+        "label": "GitHub",
+        "href": "https://github.com/PranavkrishnaVadhyar",
+        "icon": "Github"
+      },
+      {
+        "id": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/pranavkrishnavadhyar/",
+        "icon": "Linkedin"
+      },
+      {
+        "id": "links",
+        "label": "All my links",
+        "href": "https://linktr.ee/pranavkrishna.ai",
+        "icon": "Mail"
+      },
+      {
+        "id": "resume",
+        "label": "View résumé",
+        "href": "https://drive.google.com/file/d/1ZSX9j3Xq2i6xIVN2zMSj1VoHDk_ZDKIM/view?usp=sharing",
+        "icon": ""
+      },
+      {
+        "id": "medium",
+        "label": "Medium",
+        "href": "https://medium.com/@bpranavkrishnavadhyar",
+        "icon": "BookOpen"
+      }
+    ]
+  },
+  "footer": {
+    "year": 2026,
+    "tagline": "BUILT WITH CURIOSITY. CONNECTED BY CODE.",
+    "back": "Back to top"
+  },
+  "ui": {
+    "pause": "Ⅱ Pause motion",
+    "resume": "▶ Resume motion",
+    "cursorOpen": "OPEN",
+    "cursorScroll": "SCROLL"
+  },
+  "blogs": {
+    "heading": {
+      "index": "06",
+      "label": "WRITING & RESEARCH",
+      "title": "Ideas worth sharing.",
+      "accent": "Systems worth understanding.",
+      "prefix": "",
+      "description": "Technical writing on retrieval-augmented generation, search, and production AI."
+    },
+    "title": "RAG & AI Engineering Blog",
+    "description": "Explore the RAG optimization series by B Pranavkrishna Vadhyar: data preprocessing, chunking, indexing, hybrid search, reranking, and advanced retrieval.",
+    "eyebrow": "ENGINEERING NOTES / THE BLOG",
+    "intro": "A closer look at the decisions behind useful AI systems. Practical notes on preparing better data, finding the right context, and building stronger retrieval pipelines.",
+    "seriesTitle": "The RAG optimization series",
+    "seriesDescription": "Start with the foundations in Part 1, then explore the retrieval layer in Part 2. Each article links to the complete post on Medium.",
+    "all": "Explore the blog",
+    "read": "Read on Medium",
+    "home": "Back to portfolio",
+    "published": "Published on Medium",
+    "partLabel": "PART",
+    "minutes": "min read",
+    "topicsLabel": "Topics explored",
+    "mediumLabel": "Follow my writing on Medium",
+    "mediumUrl": "https://medium.com/@bpranavkrishnavadhyar",
+    "articles": [
+      {
+        "id": "rag-foundations",
+        "part": 1,
+        "title": "RAG Optimization Techniques: Data Preprocessing, Chunking & Indexing (Part 1)",
+        "url": "https://medium.com/@bpranavkrishnavadhyar/rag-optimization-techniques-data-preprocessing-chunking-indexing-part-1-057ac60aa2df",
+        "published": "2026-06-18",
+        "readingMinutes": 10,
+        "summary": "Build a stronger foundation for retrieval: clean and deduplicate source data, choose a chunking strategy, enrich metadata, and compare vector indexing methods.",
+        "topics": [
+          "Data preprocessing",
+          "Semantic chunking",
+          "Metadata enrichment",
+          "HNSW & IVF"
+        ],
+        "diagram": [
+          "CLEAN",
+          "CHUNK",
+          "INDEX"
+        ]
+      },
+      {
+        "id": "rag-retrieval",
+        "part": 2,
+        "title": "RAG Optimization Techniques: Hybrid Search, Reranking & Advanced Retrieval Patterns (Part 2)",
+        "url": "https://medium.com/@bpranavkrishnavadhyar/rag-optimization-techniques-hybrid-search-reranking-advanced-retrieval-patterns-part-2-7b2adb556a1f",
+        "published": "2026-10-05",
+        "readingMinutes": 12,
+        "summary": "Improve what your RAG system retrieves with hybrid search and reciprocal rank fusion, query transformation, cross-encoder reranking, and graph-based or agentic retrieval.",
+        "topics": [
+          "Hybrid search",
+          "Reranking",
+          "GraphRAG",
+          "Agentic RAG"
+        ],
+        "diagram": [
+          "SEARCH",
+          "RERANK",
+          "REASON"
+        ]
+      }
+    ]
+  }
+}

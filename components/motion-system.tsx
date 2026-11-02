@@ -1,4 +1,6 @@
 "use client"
+import content from "@/data/portfolio.json"
+
 import { createContext, useContext, useEffect, useState, useRef, type ReactNode } from "react"
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion"
 import Tilt from "react-parallax-tilt"
@@ -43,13 +45,13 @@ export function MotionSystem({ children }: { children: ReactNode }) {
     let frame = 0
     const raf = (time: number) => { lenis.raf(time); frame = requestAnimationFrame(raf) }
     frame = requestAnimationFrame(raf)
-    const pointer = (event: PointerEvent) => { x.set(event.clientX); y.set(event.clientY); setInteractive(Boolean((event.target as Element).closest("a,button,.continuous-viewport,.depth-card")));setCursorLabel((event.target as Element).closest("a,button")?"OPEN":(event.target as Element).closest(".continuous-viewport")?"SCROLL":"") }
+    const pointer = (event: PointerEvent) => { x.set(event.clientX); y.set(event.clientY); setInteractive(Boolean((event.target as Element).closest("a,button,.continuous-viewport,.depth-card")));setCursorLabel((event.target as Element).closest("a,button")?content.ui.cursorOpen:(event.target as Element).closest(".continuous-viewport")?content.ui.cursorScroll:"") }
     window.addEventListener("pointermove", pointer, { passive: true })
     return () => { cancelAnimationFrame(frame); lenis.destroy(); window.removeEventListener("pointermove", pointer) }
   }, [enabled, fine, x, y])
   useEffect(()=>{
     if(!enabled)return
-    const visuals=document.querySelectorAll<HTMLElement>('.neural-stage,.about-portrait,.skill-universe,.project-slideshow,.experience-card,.medal-scene,.award-grid,.contact-globe,.section-heading,.contact-copy')
+    const visuals=document.querySelectorAll<HTMLElement>('.neural-stage,.about-portrait,.skill-universe,.project-slideshow,.experience-card,.medal-scene,.award-grid,.contact-globe,.section-heading,.contact-copy,.blog-card,.blog-page-intro')
     const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>entry.target.classList.toggle('cinematic-visible',entry.isIntersecting))},{threshold:.08,rootMargin:'0px 0px -25px 0px'})
     visuals.forEach(el=>{el.classList.add('cinematic-reveal');observer.observe(el)})
     return()=>{observer.disconnect();visuals.forEach(el=>el.classList.remove('cinematic-reveal','cinematic-visible'))}
@@ -59,7 +61,7 @@ export function MotionSystem({ children }: { children: ReactNode }) {
     {fine && enabled && <motion.div className={`cursor-aura ${interactive ? "is-interactive" : ""}`} style={{ left: cursorX, top: cursorY }} aria-hidden="true"><span>{cursorLabel}</span></motion.div>}
     {fine && enabled && <motion.div className="cursor-dot" style={{left:x,top:y}} aria-hidden="true"/>}
     {children}
-    <button className="motion-toggle" aria-pressed={paused} onClick={() => setPaused(v => !v)}>{paused ? "▶ Resume motion" : "Ⅱ Pause motion"}</button>
+    <button className="motion-toggle" aria-pressed={paused} onClick={() => setPaused(v => !v)}>{paused ? content.ui.resume : content.ui.pause}</button>
   </MotionContext.Provider>
 }
 
